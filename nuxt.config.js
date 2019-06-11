@@ -23,11 +23,16 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['~assets/styles/main'],
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [
+    '~/plugins/vue-lazyload',
+    '~/plugins/vue-anime.js',
+    '~/plugins/utils.js'
+  ],
+
   /*
    ** Nuxt.js modules
    */
@@ -50,6 +55,16 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) {
+      // Run ESLint on save
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/
+        })
+      }
+    }
   }
 }
