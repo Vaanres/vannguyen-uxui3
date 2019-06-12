@@ -1,13 +1,13 @@
 <template>
   <div class="container">
-    <home-featured />
+    <home-works />
   </div>
 </template>
 
 <script>
-import HomeFeatured from '~/components/pages/home/HomeFeatured'
+import HomeWorks from '~/components/pages/home/HomeWorks'
 export default {
-  components: { HomeFeatured }
+  components: { HomeWorks }
 }
 </script>
 
