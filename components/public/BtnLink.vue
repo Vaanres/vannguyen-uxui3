@@ -47,7 +47,7 @@ export default {
     height: var(--btn-size);
     border-radius: 2rem;
     background: transparentize($color: black, $amount: 0.95);
-    transition: all 0.3s var(--primary-ease);
+    transition: all 0.35s var(--primary-ease);
   }
 
   .v-icon {
