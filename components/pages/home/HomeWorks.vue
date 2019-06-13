@@ -5,13 +5,26 @@
         <div class="col-12">
           <h2>{{ title }}</h2>
           <p class="text-secondary">{{ subTitle }}</p>
-          <div class="works">
-            <home-work-item
-              v-for="(item, index) in works"
-              :id="index"
-              :key="index"
-              :item="item"
-            />
+          <div class="row">
+            <div class="col-12">
+              <div class="works">
+                <home-work-item
+                  v-for="(item, index) in works"
+                  :id="index"
+                  :key="index"
+                  :item="item"
+                />
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="d-flex justify-content-center align-items-center">
+                <btn-link
+                  class="btn-hero"
+                  link="https://www.behance.net/Vaanres"
+                  >SEE MORE PROJECTS</btn-link
+                >
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -23,10 +36,12 @@
 import HomeWorkItem from '~/components/pages/home/HomeWorkItem'
 import ProjectJSON from '~/static/data/projects.json'
 import VanillaTilt from 'vanilla-tilt'
+import BtnLink from '~/components/public/BtnLink'
+// import BtnAction from '~/components/public/BtnAction'
 
 export default {
   name: 'HomeWorks',
-  components: { HomeWorkItem },
+  components: { HomeWorkItem, BtnLink },
   data() {
     return {
       title: 'Featured Work',
@@ -36,7 +51,7 @@ export default {
     }
   },
   created() {
-    this.works = this.projects.slice(0, 4)
+    this.works = this.projects.slice(0, 2)
   },
   mounted() {
     this.tiltInit()
@@ -47,10 +62,10 @@ export default {
         reverse: true,
         scale: 1,
         max: 6,
-        speed: 1000,
-        'max-glare': 1,
-        'glare-prerender': true,
-        axis: 'x'
+        speed: 400,
+        easing: 'cubic-bezier(.475,.425,0,.995)'
+
+        // axis: 'x'
       })
     }
   }

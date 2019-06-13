@@ -6,7 +6,7 @@ Vue.use(VueLazyload, {
   observer: true,
   observerOptions: {
     rootMargin: '0px',
-    threshold: 0.1
+    threshold: 0
   },
   preLoad: 2,
   attempt: 3

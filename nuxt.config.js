@@ -23,13 +23,14 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['~assets/styles/main'],
+  css: ['~assets/styles/main', '@fortawesome/fontawesome-svg-core/styles.css'],
   /*
    ** Plugins to load before mounting the App
    */
   plugins: [
     '~/plugins/vue-lazyload',
     '~/plugins/vue-anime.js',
+    '~/plugins/fontawesome.js',
     '~/plugins/utils.js'
   ],
 
