@@ -183,6 +183,13 @@ export default {
   }
 }
 
+.work-item-container {
+  background-color: red;
+  width: 100%;
+  padding-top: 100%; /* 1:1 Aspect Ratio */
+  position: relative; /* If you want text inside of it */
+}
+
 .work-item {
   position: relative;
   transition: all 0.3s var(--primary-ease);
@@ -195,10 +202,20 @@ export default {
     }
   }
   .image {
-    &-wrapper {
-      overflow: hidden;
+    &-container {
+      width: 100%;
+      padding-top: 75%;
       position: relative;
       transition: all 0.6s var(--primary-ease);
+    }
+    &-wrapper {
+      overflow: hidden;
+      transition: all 0.6s var(--primary-ease);
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
 
       .image-curtain {
         top: 0px;
@@ -207,21 +224,17 @@ export default {
         height: 100%;
         width: 100%;
         background: $gray-100;
+        transition: all 0.6s var(--primary-ease);
       }
 
       img {
         transform-origin: 50% 50%;
         transition: all 3s ease-in-out;
-        min-height: 300px;
       }
 
       &:hover {
-        // img {
-        //   transform: scale(1.1);
-        // }
-
         transform: scale(1.05);
-        box-shadow: 0px 30px 120px
+        box-shadow: 0px 2rem 8rem
           transparentize($color: $gray-700, $amount: 0.6);
       }
     }

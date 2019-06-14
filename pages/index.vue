@@ -1,14 +1,16 @@
 <template>
-  <div class="container">
+  <div>
     <home-works />
+    <home-inform />
     <div style="height:100vh"></div>
   </div>
 </template>
 
 <script>
 import HomeWorks from '~/components/pages/home/HomeWorks'
+import HomeInform from '~/components/pages/home/HomeInform'
 export default {
-  components: { HomeWorks }
+  components: { HomeWorks, HomeInform }
 }
 </script>
 

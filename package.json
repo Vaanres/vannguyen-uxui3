@@ -10,7 +10,7 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "gen": "nuxt generate"
   },
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.8",

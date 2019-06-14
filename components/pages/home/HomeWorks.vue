@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="mb-5 pb-5">
     <div class="container">
       <div class="row no-gutters mt-5">
         <div class="col-12">
@@ -42,6 +42,12 @@ import BtnLink from '~/components/public/BtnLink'
 export default {
   name: 'HomeWorks',
   components: { HomeWorkItem, BtnLink },
+  props: {
+    itemQuantity: {
+      type: Number,
+      default: 2
+    }
+  },
   data() {
     return {
       title: 'Featured Work',
@@ -51,7 +57,7 @@ export default {
     }
   },
   created() {
-    this.works = this.projects.slice(0, 2)
+    this.works = this.projects.slice(0, this.itemQuantity)
   },
   mounted() {
     this.tiltInit()
