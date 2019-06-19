@@ -31,22 +31,7 @@
           <div
             class="d-flex flex-column flex-end justify-content-lg-end align-items-lg-end h-100"
           >
-            <div class="menu-contact">
-              <p class="menu-contact__item">
-                <a href="#" class="menu-contact__link">{{
-                  contactInfo.email
-                }}</a>
-              </p>
-              <p class="menu-contact__item">
-                <a href="#" class="menu-contact__link">{{
-                  contactInfo.phone
-                }}</a>
-              </p>
-              <p class="menu-contact__item">
-                {{ contactInfo.address }}
-              </p>
-              <div class="menu-contact__item"><Socials /></div>
-            </div>
+            <contact-info />
           </div>
         </div>
       </div>
@@ -55,11 +40,11 @@
 </template>
 
 <script>
-import Socials from '~/components/public/Socials'
+import ContactInfo from '~/components/public/ContactInfo'
 
 export default {
   name: 'Menu',
-  components: { Socials },
+  components: { ContactInfo },
   data() {
     return {
       contactInfo: {

@@ -1,24 +1,27 @@
 <template>
   <section class="section-container">
     <div class="container">
-      <div class="row no-gutters">
+      <div class="row">
         <div class="col-12">
           <section v-if="about.length">
             <div v-for="(item, index) in about" :key="index" class="row">
               <div class="col-lg-8">
                 <div class="mb-4">
-                  <h1>{{ item.fields.title }}</h1>
-                  <h5 class="font-weight-normal">
+                  <p class="tagline tagline--primary">
                     {{ item.fields.subTitle }}
-                  </h5>
+                  </p>
+                  <h1 class="title mb-4">{{ item.fields.title }}</h1>
                 </div>
-                <div v-html="renderMD(item.fields.description)"></div>
+                <div
+                  class="sub-title"
+                  v-html="renderMD(item.fields.description)"
+                ></div>
               </div>
             </div>
             <hr class="my-5" />
           </section>
           <section v-if="works.length">
-            <h1 class="mb-5">Experience</h1>
+            <h1 class="mb-5 pb-5">Experience</h1>
             <div v-for="(item, index) in works" :key="index" class="row mb-5">
               <div class="col-12 col-md-4 mb-3 mb-md-0">
                 <div

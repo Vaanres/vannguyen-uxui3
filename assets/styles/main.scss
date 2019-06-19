@@ -2,7 +2,7 @@
 @import './customized_bootstrap';
 @import './mixins';
 @import './functions';
-@import "./hamburgers";
+@import './hamburgers';
 
 ::selection {
   color: var(--white);
@@ -25,8 +25,6 @@
     }
   }
 }
-
-
 
 .section {
   &-container {
@@ -58,8 +56,6 @@ h6 {
   }
 }
 
-
-
 .page {
   &-enter-active,
   &-leave-active {
@@ -77,6 +73,11 @@ h6 {
   &__default {
     transition: all 0.3s ease-in-out;
   }
+}
+
+.sub-title {
+  font-size: 1.3rem;
+  font-weight: 500;
 }
 
 .tagline {
