@@ -6,7 +6,7 @@
         <div class="col-12 col-md-8">
           <p class="tagline tagline--primary">{{ tagline }}</p>
           <h1 class="title mb-4">{{ title }}</h1>
-          <p class="sub-title">
+          <p class="subTitle sub-title">
             {{ subTitle }}
           </p>
           <btn-action class="btn-hero mt-5" link="/">Get to know us</btn-action>

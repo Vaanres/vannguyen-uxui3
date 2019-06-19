@@ -21,7 +21,7 @@
             <hr class="my-5" />
           </section>
           <section v-if="works.length">
-            <h1 class="mb-5 pb-5">Experience</h1>
+            <h1 class="mb-lg-5 pb-lg-5">Experience</h1>
             <div v-for="(item, index) in works" :key="index" class="row mb-5">
               <div class="col-12 col-md-4 mb-3 mb-md-0">
                 <div
