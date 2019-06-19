@@ -75,6 +75,7 @@ export default {
       })
       .catch(console.error)
   },
+  mounted() {},
   methods: {
     renderMD(text) {
       marked.setOptions({
