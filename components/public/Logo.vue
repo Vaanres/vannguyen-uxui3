@@ -34,6 +34,6 @@ export default {
 .main-logo {
   font-size: 2rem;
   line-height: 1;
-  font-weight: bold;
+  font-weight: 800;
 }
 </style>

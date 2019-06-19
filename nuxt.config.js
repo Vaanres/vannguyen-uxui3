@@ -1,3 +1,6 @@
+const meta = require('./meta')
+const contentfulConfig = require('./.contentful.json')
+
 export default {
   mode: 'universal',
   /*
@@ -80,5 +83,26 @@ export default {
         })
       }
     }
+  },
+  render: {
+    bundleRenderer: {
+      shouldPreload: (file, type) => {
+        return ['script', 'style', 'font'].includes(type)
+      }
+    }
+  },
+  env: {
+    site_name: `- ${meta.name}`,
+    site_description: `- ${meta.description}`,
+    CTF_SPACE_ID: contentfulConfig.CTF_SPACE_ID,
+    CTF_CDA_ACCESS_TOKEN: contentfulConfig.CTF_CDA_ACCESS_TOKEN,
+    CTF_ABOUT_ID: contentfulConfig.CTF_ABOUT_ID,
+    CTF_ABOUT_TYPE_ID: contentfulConfig.CTF_ABOUT_TYPE_ID,
+    CTF_PORTFOLIO_TYPE_ID: contentfulConfig.CTF_PORTFOLIO_TYPE_ID
+  },
+  extractCSS: true,
+  manifest: {
+    name: 'Van Nguyen — UX/UI Designer',
+    short_name: 'Van Nguyen'
   }
 }

@@ -169,7 +169,7 @@ export default {
         display: inline-flex;
         position: absolute;
         font-weight: 700;
-        transition: all 0.3s var(--primary-ease);
+        transition: all 0.6s var(--primary-ease);
         opacity: 0;
         transform: translate3d(1rem, 0, 0);
         color: var(--primary);
@@ -179,7 +179,7 @@ export default {
         line-height: 1.2;
         font-weight: bold;
         padding: 0px;
-        transition: all 0.3s var(--primary-ease);
+        transition: all 0.6s var(--primary-ease);
         transform: translate3d(0, 0, 0);
 
         @include media-breakpoint-down(sm) {
