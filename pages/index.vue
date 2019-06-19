@@ -2,7 +2,6 @@
   <div>
     <home-works />
     <home-inform />
-    <div style="height:100vh"></div>
   </div>
 </template>
 

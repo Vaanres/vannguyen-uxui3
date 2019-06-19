@@ -1,13 +1,13 @@
 <template>
-  <section class="mb-5 pb-5">
+  <section class="section-container">
     <div class="container">
-      <div class="row no-gutters mt-5">
+      <div class="row no-gutters">
         <div class="col-12">
           <h2>{{ title }}</h2>
           <p class="text-secondary">{{ subTitle }}</p>
           <div class="row">
             <div class="col-12">
-              <div class="works">
+              <div class="works section-container">
                 <home-work-item
                   v-for="(item, index) in works"
                   :id="index"
@@ -45,7 +45,7 @@ export default {
   props: {
     itemQuantity: {
       type: Number,
-      default: 2
+      default: 6
     }
   },
   data() {
@@ -87,7 +87,6 @@ export default {
     display: grid;
     grid-gap: 6rem;
     grid-template-columns: repeat(var(--work-col), 1fr);
-    margin: 6rem 0;
 
     @include media-breakpoint-up(md) {
       --work-col: 2;
