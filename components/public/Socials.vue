@@ -1,5 +1,5 @@
 <template>
-  <div class="socials d-flex">
+  <div class="socials d-flex" :class="getTheme">
     <a
       class="social-link pr-3 mr-3 transition__default"
       aria-label="See me on Twitter"
@@ -56,6 +56,12 @@ export default {
   components: {
     FontAwesomeIcon
   },
+  props: {
+    theme: {
+      type: String,
+      default: ''
+    }
+  },
   data() {
     return {
       tooltip: { delay: { show: 300, hide: 100 } },
@@ -65,28 +71,50 @@ export default {
       iconTwitter: faTwitter,
       iconLinkedin: faLinkedinIn
     }
+  },
+  computed: {
+    getTheme() {
+      return this.isExisted(this.theme) ? `socials__${this.theme}` : ''
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+@import '~assets/styles/core';
+
 .socials {
-  &:not(:hover) {
-    .social-link {
-      color: white;
-    }
-  }
-  &:hover {
-    .social-link {
-      color: var(--gray);
-    }
+  --link-default: var(--gray);
+  --link-hover: var(--dark);
+
+  &__dark {
+    --link-hover: var(--white);
   }
 
   .social-link {
-    transition: all 0.25s ease-in-out;
+    transition: all 0.3s var(--primary-ease);
+    color: var(--link-default);
     &:hover {
-      color: white;
+      color: var(--link-hover);
     }
   }
+
+  // &:not(:hover) {
+  //   .social-link {
+  //     color: white;
+  //   }
+  // }
+  // &:hover {
+  //   .social-link {
+  //     color: var(--dark);
+  //   }
+  // }
+
+  // .social-link {
+  //   transition: all 0.25s var(--primary-ease);
+  //   &:hover {
+  //     color: white;
+  //   }
+  // }
 }
 </style>

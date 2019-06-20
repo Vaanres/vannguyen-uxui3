@@ -9,7 +9,9 @@
           <p class="subTitle sub-title">
             {{ subTitle }}
           </p>
-          <btn-action class="btn-hero mt-5" link="/">Get to know us</btn-action>
+          <btn-action class="btn-hero mt-5" link="/about"
+            >Know more about me</btn-action
+          >
         </div>
       </div>
     </div>
@@ -26,10 +28,9 @@ export default {
   data() {
     return {
       show: false,
-      tagline: 'We are Vietlink',
-      title: 'A Communication Design Company',
-      subTitle:
-        'We are a creative team of designers and developers, building elevated websites in Ho Chi Minh, Vietnam.'
+      tagline: 'I AM',
+      title: 'A Product Designer',
+      subTitle: 'I combine STRATEGY, TECHNOLOGY and DESIGN to solve problems'
     }
   },
   mounted() {

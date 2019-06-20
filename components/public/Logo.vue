@@ -16,7 +16,7 @@ export default {
   },
   data() {
     return {
-      text: 'Vietlink'
+      text: 'VanNguyen'
     }
   },
   mounted() {

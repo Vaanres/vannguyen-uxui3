@@ -9,7 +9,7 @@
     <p class="contact__item">
       {{ contactInfo.address }}
     </p>
-    <div class="contact__item"><Socials /></div>
+    <div class="contact__item"><Socials :theme="theme" /></div>
   </div>
 </template>
 
@@ -18,12 +18,18 @@ import Socials from '~/components/public/Socials'
 export default {
   name: 'ContactInfo',
   components: { Socials },
+  props: {
+    theme: {
+      type: String,
+      default: ''
+    }
+  },
   data() {
     return {
       contactInfo: {
-        email: 'hr-department@vietlinkads.com',
-        phone: '+84 28 3910 7431',
-        address: '67 Le Loi, Ben Nghe Ward, District 1, Ho Chi Minh city'
+        email: 'vaanres@gmail.com',
+        phone: '+84 866 485 946',
+        address: 'District 1, Ho Chi Minh city, Vietnam'
       }
     }
   }

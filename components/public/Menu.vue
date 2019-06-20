@@ -31,7 +31,7 @@
           <div
             class="d-flex flex-column flex-end justify-content-lg-end align-items-lg-end h-100"
           >
-            <contact-info />
+            <contact-info theme="dark" />
           </div>
         </div>
       </div>

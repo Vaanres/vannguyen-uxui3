@@ -11,7 +11,7 @@
               <p class="tagline mb-5">{{ title }}</p>
             </div>
             <div class="col-12 col-lg-10 offset-lg-1">
-              <h4 class="title mb-0 font-weight-medium">{{ text }}</h4>
+              <h5 class="title mb-0 font-weight-medium">{{ text }}</h5>
             </div>
           </div>
         </div>
@@ -27,10 +27,9 @@ export default {
   data() {
     return {
       show: false,
-      bg: '/images/bg-inform.jpg',
-      title: 'A digital company',
+      title: 'INTRO',
       text:
-        'We are a web design and development company, building websites that drive traffic, engagement, and conversion for industry-leading brands and startups in Vietnam.'
+        "I've helped companies solve business problems with Designs. I'm a bridge between Developers, Designers and Business to connect everyone, everything together."
     }
   },
 
@@ -56,10 +55,6 @@ export default {
       )
 
       io.observe(document.getElementById('inform1'))
-
-      // document.querySelectorAll('.inform-container').forEach(el => {
-      //   io.observe(el)
-      // })
     }
   }
 }

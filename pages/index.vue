@@ -1,9 +1,8 @@
 <template>
   <div>
     <home-hero />
-    <home-works />
     <home-inform />
-    <div style="height:100vh"></div>
+    <home-works />
   </div>
 </template>
 

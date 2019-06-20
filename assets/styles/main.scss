@@ -59,7 +59,7 @@ h6 {
 .page {
   &-enter-active,
   &-leave-active {
-    transition: all 0.2s ease;
+    transition: all 0.3s var(--primary-ease);;
   }
 
   &-enter,
@@ -71,7 +71,7 @@ h6 {
 
 .transition {
   &__default {
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s var(--primary-ease);
   }
 }
 
