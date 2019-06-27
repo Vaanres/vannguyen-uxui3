@@ -33,9 +33,9 @@
 </template>
 
 <script>
+import VanillaTilt from 'vanilla-tilt'
 import HomeWorkItem from '~/components/pages/home/HomeWorkItem'
 import ProjectJSON from '~/static/data/projects.json'
-import VanillaTilt from 'vanilla-tilt'
 import BtnLink from '~/components/public/BtnLink'
 // import BtnAction from '~/components/public/BtnAction'
 
