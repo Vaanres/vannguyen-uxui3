@@ -21,7 +21,13 @@ export default {
       }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+      { rel: 'preconnect', href: 'https://behance.com' },
+      { rel: 'prerender', href: '/' },
+      { rel: 'prerender', href: '/about' },
+      { rel: 'prerender', href: '/contact' }
+
       // {
       //   rel: 'stylesheet',
       //   lazyload: true,
@@ -116,6 +122,9 @@ export default {
     CTF_PORTFOLIO_TYPE_ID: contentfulConfig.CTF_PORTFOLIO_TYPE_ID
   },
   extractCSS: true,
+  splitChunks: {
+    layout: true
+  },
   manifest: {
     name: 'Van Nguyen — Product Designer',
     short_name: 'Van Nguyen'
