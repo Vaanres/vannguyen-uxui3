@@ -5,6 +5,7 @@
       aria-label="See me on Twitter"
       title="See me on Twitter"
       target="_blank"
+      rel="noreferrer"
       href="https://twitter.com/vaanres"
     >
       <span class="d-block"> <font-awesome-icon :icon="iconTwitter"/></span>
@@ -14,6 +15,7 @@
       aria-label="See me on Facebook"
       title="See me on Facebook"
       target="_blank"
+      rel="noreferrer"
       href="https://www.facebook.com/vaanres"
     >
       <span class="d-block"><font-awesome-icon :icon="iconFacebook"/></span>
@@ -24,6 +26,7 @@
       aria-label="See me on LinkedIn"
       title="See me on LinkedIn"
       target="_blank"
+      rel="noreferrer"
       href="https://www.linkedin.com/in/nguyen-le-van/"
     >
       <span class="d-block"> <font-awesome-icon :icon="iconLinkedin"/></span>
@@ -34,6 +37,7 @@
       aria-label="See me on Behance"
       title="See me on Behance"
       target="_blank"
+      rel="noreferrer"
       href="https://behance.net/vaanres"
     >
       <span class="d-block"><font-awesome-icon :icon="iconBehance"/></span>

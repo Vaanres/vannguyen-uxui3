@@ -12,6 +12,7 @@
         :class="{ 'is-active': isActive }"
         class="hamburger hamburger--spin"
         type="button"
+        aria-label="BtnHamburger"
       >
         <span class="hamburger-box">
           <span class="hamburger-inner"></span>

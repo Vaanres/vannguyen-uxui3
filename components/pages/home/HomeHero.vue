@@ -28,8 +28,8 @@ export default {
   data() {
     return {
       show: false,
-      tagline: 'I AM',
-      title: 'A Product Designer',
+      tagline: 'I AM A',
+      title: 'Product Designer',
       subTitle: 'I combine STRATEGY, TECHNOLOGY and DESIGN to solve problems'
     }
   },
@@ -42,12 +42,12 @@ export default {
     prepareAnimeText() {
       this.trim('.tagline', '.title')
       charming(document.querySelector('.tagline'), {
-        classPrefix: 'moving-letters'
+        classPrefix: 'char'
       })
 
       charming(document.querySelector('.title'), {
         splitRegex: /(\s+)/,
-        classPrefix: 'moving-letters'
+        classPrefix: 'char'
       })
     },
     animateText() {
@@ -60,7 +60,7 @@ export default {
           translateX: [40, 0],
           translateZ: 0,
           opacity: [0, 1],
-          easing: 'easeOutExpo',
+          easing: 'cubicBezier(.475,.425,0,.995)',
           duration: 400,
           autoplay: false,
           delay: _this.$anime.stagger(30, { start: 250 }),
@@ -81,7 +81,7 @@ export default {
             translateX: [40, 0],
             translateZ: 0,
             opacity: [0, 1],
-            easing: 'easeOutExpo',
+            easing: 'cubicBezier(.475,.425,0,.995)',
             duration: 800,
             autoplay: false,
             delay: _this.$anime.stagger(30, { start: 500 }),

@@ -21,6 +21,7 @@
                 <btn-link
                   class="btn-hero"
                   link="https://www.behance.net/Vaanres"
+                  rel="noreferrer"
                   >SEE MORE PROJECTS</btn-link
                 >
               </div>

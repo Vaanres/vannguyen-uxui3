@@ -7,24 +7,27 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: meta.name || 'Van Nguyen',
+    htmlAttrs: {
+      lang: 'vi'
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
+        content: meta.description || ''
       }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {
-        rel: 'stylesheet',
-        lazyload: true,
-        href:
-          'https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap&subset=vietnamese'
-      }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      // {
+      //   rel: 'stylesheet',
+      //   lazyload: true,
+      //   href:
+      //     'https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap&subset=vietnamese'
+      // }
     ]
   },
   /*
@@ -50,6 +53,7 @@ export default {
    */
   modules: [
     // Doc: https://bootstrap-vue.js.org/docs/
+    'nuxt-webfontloader',
     [
       'bootstrap-vue/nuxt',
       {
@@ -87,7 +91,10 @@ export default {
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
-          exclude: /(node_modules)/
+          exclude: /(node_modules)/,
+          options: {
+            fix: true
+          }
         })
       }
     }
@@ -110,7 +117,14 @@ export default {
   },
   extractCSS: true,
   manifest: {
-    name: 'Van Nguyen — UX/UI Designer',
+    name: 'Van Nguyen — Product Designer',
     short_name: 'Van Nguyen'
+  },
+  webfontloader: {
+    google: {
+      families: [
+        'Montserrat:300,400,500,600,700&display=swap&subset=vietnamese'
+      ]
+    }
   }
 }

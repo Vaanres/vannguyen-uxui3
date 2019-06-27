@@ -107,7 +107,7 @@ button {
 }
 
 //AnimeJS
-[class*='moving-letters'] {
+[class*='moving-letters'], [class*='char'] {
   display: inline-block;
   white-space: pre;
 }

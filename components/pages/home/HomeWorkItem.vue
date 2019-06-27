@@ -4,11 +4,11 @@
     class="work-item text-decoration-none"
     target="_blank"
     :href="item.url"
-    rel="noopener noreferrer"
+    rel="noreferrer"
   >
     <div class="row">
       <div class="col-12">
-        <div class="image-container" :style="{ transform: imageTranslate3D }">
+        <div class="image-container">
           <div class="image-wrapper">
             <img v-lazy="imagePath" :alt="item.name" class="img-fluid" />
 
@@ -20,10 +20,7 @@
 
         <transition name="content">
           <div v-if="isContentShow" class="content-container">
-            <div
-              class="content mt-3"
-              :style="{ transform: contentTranslate3D }"
-            >
+            <div class="content mt-3">
               <small v-if="item.fields">
                 <p
                   class="description font-weight-medium text-secondary text-uppercase mb-1"
@@ -57,60 +54,19 @@ export default {
     return {
       showCount: 0,
       isContentShow: false,
-      isCurtainShow: true,
-      isWatchParallaxScroll: false,
-      itemStyle: {
-        card: {
-          translateY: 0
-        },
-        image: {
-          translateY: 0
-        },
-        content: {
-          translateY: 0
-        }
-      }
+      isCurtainShow: true
     }
   },
   computed: {
     imagePath() {
       return this.item.covers['808']
-    },
-    cardTranslate3D() {
-      let x = this.itemStyle.image.translateY
-      if (!(this.id % 2 === 0)) {
-        x = 60
-      }
-      return `translateY(${x}px)`
-    },
-    imageTranslate3D() {
-      return `translateY(${this.itemStyle.image.translateY}px)`
-    },
-    contentTranslate3D() {
-      return `translateY(${this.itemStyle.content.translateY}px)`
     }
   },
   mounted() {
     this.watchIntersection()
   },
-  beforeDestroy() {
-    if (this.isWatchParallaxScroll) {
-      this.isWatchParallaxScroll = false
-      window.removeEventListener('scroll', this.watchParallaxScroll)
-    }
-  },
+  beforeDestroy() {},
   methods: {
-    watchParallaxScroll() {
-      const rect = document.getElementById(this.id).getBoundingClientRect()
-      if (rect.top <= 100) {
-        this.itemStyle.image.translateY = (rect.top - 100) * 0.15
-        this.itemStyle.content.translateY =
-          this.itemStyle.image.translateY * 0.5
-      } else {
-        this.itemStyle.image.translateY = 0
-        this.itemStyle.content.translateY = 0
-      }
-    },
     watchIntersection() {
       const _this = this
       const io = new IntersectionObserver(
@@ -119,14 +75,6 @@ export default {
             if (entry.isIntersecting) {
               _this.isCurtainShow = false
               _this.isContentShow = true
-
-              if (!_this.isWatchParallaxScroll) {
-                _this.isWatchParallaxScroll = true
-                window.addEventListener('scroll', _this.watchParallaxScroll)
-              }
-            } else if (_this.isWatchParallaxScroll) {
-              _this.isWatchParallaxScroll = false
-              window.removeEventListener('scroll', _this.watchParallaxScroll)
             }
 
             // console.log(
