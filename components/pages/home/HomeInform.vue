@@ -4,6 +4,7 @@
       class="inform-container section-container d-flex align-items-center section-padding"
     >
       <!-- <transition name="inform"> -->
+
       <div class="container">
         <div class="row no-gutters text-white">
           <div class="col-12">
@@ -37,12 +38,14 @@ export default {
   },
   methods: {
     watchIntersection() {
+      const target = document.querySelector('.inform-container')
       const _this = this
       const io = new IntersectionObserver(
         entries => {
           for (const entry of entries) {
             if (entry.isIntersecting) {
               _this.show = true
+              target.style.setProperty('--bg-width', '100%')
             }
           }
         },
@@ -61,27 +64,8 @@ export default {
 <style lang="scss" scoped>
 @import '~assets/styles/core';
 
-.inform {
-  &-enter-active {
-    animation: inform-w-animation 1s var(--primary-ease);
-  }
-  &-leave-active {
-    animation: inform-w-animation 0.4s var(--primary-ease) reverse;
-  }
-}
-
 .inform-container {
-  --bg-width: 100%;
-
-  @keyframes inform-w-animation {
-    0% {
-      --bg-width: 0%;
-    }
-
-    100% {
-      --bg-width: 100%;
-    }
-  }
+  --bg-width: 0%;
 
   .title {
     line-height: 1.8;
