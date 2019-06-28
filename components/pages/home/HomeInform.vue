@@ -1,22 +1,20 @@
 <template>
   <div id="inform1">
-    <transition name="inform">
-      <section
-        v-if="show"
-        class="inform-container section-container d-flex align-items-center section-padding"
-      >
-        <div class="container">
-          <div class="row no-gutters text-white">
-            <div class="col-12">
-              <p class="tagline mb-5">{{ title }}</p>
-            </div>
-            <div class="col-12 col-lg-10 offset-lg-1">
-              <h5 class="title mb-0 font-weight-medium">{{ text }}</h5>
-            </div>
+    <section
+      class="inform-container section-container d-flex align-items-center section-padding"
+    >
+      <!-- <transition name="inform"> -->
+      <div class="container">
+        <div class="row no-gutters text-white">
+          <div class="col-12">
+            <p class="tagline mb-5">{{ title }}</p>
+          </div>
+          <div class="col-12 col-lg-10 offset-lg-1">
+            <h5 class="title mb-0 font-weight-medium">{{ text }}</h5>
           </div>
         </div>
-      </section>
-    </transition>
+      </div>
+    </section>
   </div>
 </template>
 

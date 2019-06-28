@@ -27,13 +27,6 @@ export default {
       { rel: 'prerender', href: '/' },
       { rel: 'prerender', href: '/about' },
       { rel: 'prerender', href: '/contact' }
-
-      // {
-      //   rel: 'stylesheet',
-      //   lazyload: true,
-      //   href:
-      //     'https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap&subset=vietnamese'
-      // }
     ]
   },
   /*
@@ -68,15 +61,15 @@ export default {
     ],
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/eslint-module',
-    '@nuxtjs/pwa',
-    [
-      '@nuxtjs/component-cache',
-      {
-        max: 10000,
-        maxAge: 1000 * 60 * 60
-      }
-    ]
+    '@nuxtjs/eslint-module'
+    // '@nuxtjs/pwa',
+    // [
+    //   '@nuxtjs/component-cache',
+    //   {
+    //     max: 10000,
+    //     maxAge: 1000 * 60 * 60
+    //   }
+    // ]
   ],
   /*
    ** Axios module configuration

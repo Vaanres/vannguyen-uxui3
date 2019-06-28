@@ -1,5 +1,5 @@
 <template>
-  <span class="main-logo mb-0" :class="{ 'text-light': isLightLogo }">
+  <span class="main-logo" :class="{ 'text-light': isLightLogo }">
     {{ text }}
   </span>
 </template>
