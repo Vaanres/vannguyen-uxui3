@@ -12,13 +12,13 @@
 /*Scrollbar*/
 /* width */
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 3px;
   &-track {
     background: transparent;
   }
   &-thumb {
     background: var(--dark);
-    transition: all 0.25s ease-in-out;
+    transition: all 0.3s var(--primary-ease);
 
     &:hover {
       background: var(--gray);
@@ -59,7 +59,7 @@ h6 {
 .page {
   &-enter-active,
   &-leave-active {
-    transition: all 0.3s var(--primary-ease);;
+    transition: all 0.3s var(--primary-ease);
   }
 
   &-enter,

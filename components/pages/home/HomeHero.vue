@@ -40,14 +40,15 @@ export default {
   },
   methods: {
     prepareAnimeText() {
-      this.trim('.tagline', '.title')
-      charming(document.querySelector('.tagline'), {
-        classPrefix: 'char'
-      })
-
-      charming(document.querySelector('.title'), {
-        splitRegex: /(\s+)/,
-        classPrefix: 'char'
+      this.trim('.hero .tagline', '.hero .title')
+      charming(document.querySelector('.hero .tagline'))
+      charming(document.querySelector('.hero .title'), {
+        split: function(string) {
+          return string.split(/(\s+)/)
+        },
+        setClassName: function(index) {
+          return `char${index}`
+        }
       })
     },
     animateText() {
@@ -56,7 +57,7 @@ export default {
 
       headerTimeline
         .add({
-          targets: '.tagline span',
+          targets: '.hero .tagline span',
           translateX: [40, 0],
           translateZ: 0,
           opacity: [0, 1],
@@ -77,7 +78,7 @@ export default {
         })
         .add(
           {
-            targets: '.title span',
+            targets: '.hero .title span',
             translateX: [40, 0],
             translateZ: 0,
             opacity: [0, 1],

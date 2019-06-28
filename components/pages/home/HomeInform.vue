@@ -1,25 +1,22 @@
 <template>
-  <div id="inform1">
-    <section
-      class="inform-container section-container d-flex align-items-center section-padding"
-    >
-      <!-- <transition name="inform"> -->
-
-      <div class="container">
-        <div class="row no-gutters text-white">
-          <div class="col-12">
-            <p class="tagline mb-5">{{ title }}</p>
-          </div>
-          <div class="col-12 col-lg-10 offset-lg-1">
-            <h5 class="title mb-0 font-weight-medium">{{ text }}</h5>
-          </div>
+  <section
+    class="inform-container section-container d-flex align-items-center section-padding"
+  >
+    <div class="container">
+      <div class="row no-gutters text-white">
+        <div class="col-12">
+          <p class="tagline mb-5">{{ title }}</p>
+        </div>
+        <div class="col-12 col-lg-10 offset-lg-1">
+          <h5 class="title mb-0 font-weight-medium">{{ text }}</h5>
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </template>
 
 <script>
+import charming from 'charming'
 export default {
   name: 'HomeInform',
 
@@ -34,18 +31,56 @@ export default {
 
   mounted() {
     // this.show = true
+    this.prepareAnimeText()
+
     this.watchIntersection()
   },
   methods: {
+    prepareAnimeText() {
+      this.trim('.inform-container .tagline', '.inform-container .title')
+      charming(document.querySelector('.inform-container .tagline'))
+      charming(document.querySelector('.inform-container .title'), {
+        split: function(string) {
+          return string.split(/(\s+)/)
+        },
+        setClassName: function(index) {
+          return `char${index}`
+        }
+      })
+    },
+    animateText() {
+      const _this = this
+      this.$anime({
+        targets: '.inform-container .tagline span',
+        translateX: [0, 40],
+        translateZ: 0,
+        opacity: [0, 1],
+        easing: 'cubicBezier(.475,.425,0,.995)',
+        duration: 400,
+        delay: _this.$anime.stagger(50)
+      })
+
+      this.$anime({
+        targets: '.inform-container .title span',
+        translateX: [0, 40],
+        translateZ: 0,
+        opacity: [0, 1],
+        easing: 'cubicBezier(.475,.425,0,.995)',
+        duration: 1000,
+        delay: _this.$anime.stagger(10, { start: 400 })
+      })
+    },
+
     watchIntersection() {
       const target = document.querySelector('.inform-container')
       const _this = this
       const io = new IntersectionObserver(
         entries => {
           for (const entry of entries) {
-            if (entry.isIntersecting) {
+            if (entry.isIntersecting && !_this.show) {
               _this.show = true
               target.style.setProperty('--bg-width', '100%')
+              _this.animateText()
             }
           }
         },
@@ -55,7 +90,7 @@ export default {
         }
       )
 
-      io.observe(document.getElementById('inform1'))
+      io.observe(target)
     }
   }
 }
