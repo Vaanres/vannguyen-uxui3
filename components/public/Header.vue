@@ -6,7 +6,7 @@
       :class="{ 'bg-black': getMenuOpenStatus }"
     >
       <div
-        class="d-flex justify-content-between align-items-center py-4 px-md-5"
+        class="d-flex justify-content-between align-items-center py-4 px-lg-5"
       >
         <nuxt-link to="/">
           <Logo
