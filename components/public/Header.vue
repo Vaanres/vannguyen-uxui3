@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section v-show="show">
     <div class="menu-cover" :class="{ full: getMenuOpenStatus }"></div>
     <header
       class="container-fluid position-fixed"
@@ -37,6 +37,7 @@ export default {
   components: { BtnHamburger, Menu, Logo },
   data() {
     return {
+      show: false,
       isLogoDisplay: true,
       animateLogoInObject: null,
       animateLogoOutObject: null,
@@ -68,14 +69,10 @@ export default {
     //   }
     // }
   },
-  beforeMount() {
-    // window.addEventListener('scroll', this.handleScroll)
-  },
-  beforeDestroy() {
-    // window.removeEventListener('scroll', this.handleScroll)
-  },
+
   mounted() {
     this.animeReady()
+    this.show = true
     if (!this.getMenuOpenStatus) {
       this.animateHeader()
     }
@@ -186,8 +183,8 @@ export default {
         translateZ: 0,
         opacity: [0, 1],
         easing: 'cubicBezier(.475,.425,0,.995)',
-        delay: 1500,
-        duration: 800
+        delay: 0,
+        duration: 1000
       })
     },
 

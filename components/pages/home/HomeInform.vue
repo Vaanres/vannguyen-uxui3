@@ -16,7 +16,6 @@
 </template>
 
 <script>
-import charming from 'charming'
 export default {
   name: 'HomeInform',
 
@@ -31,23 +30,10 @@ export default {
 
   mounted() {
     // this.show = true
-    this.prepareAnimeText()
-
+    this.charmingText('.inform-container .tagline', '.inform-container .title')
     this.watchIntersection()
   },
   methods: {
-    prepareAnimeText() {
-      this.trim('.inform-container .tagline', '.inform-container .title')
-      charming(document.querySelector('.inform-container .tagline'))
-      charming(document.querySelector('.inform-container .title'), {
-        split: function(string) {
-          return string.split(/(\s+)/)
-        },
-        setClassName: function(index) {
-          return `char${index}`
-        }
-      })
-    },
     animateText() {
       const _this = this
       this.$anime({

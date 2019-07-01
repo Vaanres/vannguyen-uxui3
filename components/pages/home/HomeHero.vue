@@ -1,7 +1,7 @@
 <template>
   <section class="hero d-flex align-items-center">
     <div class="hero__bg"></div>
-    <div class="container">
+    <div v-show="show" class="container">
       <div class="row">
         <div class="col-12 col-md-8">
           <p class="tagline tagline--primary">{{ tagline }}</p>
@@ -19,7 +19,6 @@
 </template>
 
 <script>
-import charming from 'charming'
 import BtnAction from '~/components/public/BtnAction'
 
 export default {
@@ -34,23 +33,10 @@ export default {
     }
   },
   mounted() {
-    this.show = true
-    this.prepareAnimeText()
+    this.charmingText('.hero .tagline', '.hero .title')
     this.animateText()
   },
   methods: {
-    prepareAnimeText() {
-      this.trim('.hero .tagline', '.hero .title')
-      charming(document.querySelector('.hero .tagline'))
-      charming(document.querySelector('.hero .title'), {
-        split: function(string) {
-          return string.split(/(\s+)/)
-        },
-        setClassName: function(index) {
-          return `char${index}`
-        }
-      })
-    },
     animateText() {
       const _this = this
       const headerTimeline = this.$anime.timeline()
@@ -134,6 +120,8 @@ export default {
           '-=600'
         )
 
+      headerTimeline.pause()
+      this.show = true
       headerTimeline.play()
     }
   }

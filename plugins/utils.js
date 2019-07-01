@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import _ from 'lodash'
+import charming from 'charming'
 
 Vue.mixin({
   methods: {
@@ -30,6 +31,20 @@ Vue.mixin({
         }
       }
       return isMobile
+    },
+    charmingText(taglineSelector, titleSelector) {
+      if (this.isExisted(taglineSelector) && this.isExisted(titleSelector)) {
+        this.trim(taglineSelector, titleSelector)
+        charming(document.querySelector(taglineSelector))
+        charming(document.querySelector(titleSelector), {
+          split: function(string) {
+            return string.split(/(\s+)/)
+          }
+          // setClassName: function(index) {
+          //   return `char${index}`
+          // }
+        })
+      }
     }
   }
 })

@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <section v-if="about.length">
+          <section v-if="about.length" class="about-container">
             <div v-for="(item, index) in about" :key="index" class="row">
               <div class="col-lg-8">
                 <div class="mb-4">
@@ -20,7 +20,7 @@
             </div>
             <hr class="my-5" />
           </section>
-          <section v-if="works.length">
+          <section v-if="works.length" class="work-container">
             <h1 class="mb-lg-5 pb-lg-5">Experience</h1>
             <div v-for="(item, index) in works" :key="index" class="row mb-5">
               <div class="col-12 col-md-4 mb-3 mb-md-0">
