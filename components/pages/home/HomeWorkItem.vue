@@ -18,7 +18,7 @@
           </div>
         </div>
 
-        <transition name="content">
+        <transition name="slide-up">
           <div v-if="isContentShow" class="content-container">
             <div class="content mt-3">
               <small v-if="item.fields">
@@ -113,21 +113,6 @@ export default {
   }
   &-leave-active {
     animation: curtain 0.8s var(--primary-ease);
-  }
-}
-
-.content {
-  &-enter-active {
-    transition: all 1s var(--primary-ease);
-  }
-  &-leave-active {
-    transition: all 0.6s var(--primary-ease);
-  }
-
-  &-enter,
-  &-leave-to {
-    transform: translateY(6rem);
-    opacity: 0;
   }
 }
 

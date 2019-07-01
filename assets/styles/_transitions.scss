@@ -1,0 +1,35 @@
+
+.transition {
+  &__default {
+    transition: all 0.3s var(--primary-ease);
+  }
+}
+
+.page {
+  &-enter-active,
+  &-leave-active {
+    transition: all 0.3s var(--primary-ease);
+  }
+
+  &-enter,
+  &-leave-active {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+}
+
+
+.slide-up {
+  &-enter-active {
+    transition: all 1s var(--primary-ease);
+  }
+  &-leave-active {
+    transition: all 0.6s var(--primary-ease);
+  }
+
+  &-enter,
+  &-leave-to {
+    transform: translateY(8rem);
+    opacity: 0;
+  }
+}

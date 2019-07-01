@@ -3,6 +3,8 @@
 @import './mixins';
 @import './functions';
 @import './hamburgers';
+@import './transitions';
+//@import './animate'
 
 ::selection {
   color: var(--white);
@@ -56,24 +58,7 @@ h6 {
   }
 }
 
-.page {
-  &-enter-active,
-  &-leave-active {
-    transition: all 0.3s var(--primary-ease);
-  }
 
-  &-enter,
-  &-leave-active {
-    transform: scale(0.9);
-    opacity: 0;
-  }
-}
-
-.transition {
-  &__default {
-    transition: all 0.3s var(--primary-ease);
-  }
-}
 
 .sub-title {
   font-size: 1.3rem;
@@ -111,5 +96,8 @@ button {
   display: inline-block;
   white-space: pre;
 }
+
+
+// Animate 
 
 //Scrolbar
