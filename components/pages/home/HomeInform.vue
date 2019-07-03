@@ -36,25 +36,35 @@ export default {
   methods: {
     animateText() {
       const _this = this
-      this.$anime({
-        targets: '.inform-container .tagline span',
-        translateX: [0, 40],
-        translateZ: 0,
-        opacity: [0, 1],
-        easing: 'cubicBezier(.475,.425,0,.995)',
-        duration: 400,
-        delay: _this.$anime.stagger(50)
-      })
+      const headerTimeline = this.$anime.timeline()
+      headerTimeline
+        .add({
+          targets: '.inform-container .tagline span',
+          translateX: [40, 0],
+          translateZ: 0,
+          opacity: [0, 1],
+          easing: 'cubicBezier(.475,.425,0,.995)',
+          duration: 400,
+          autoplay: false,
+          delay: _this.$anime.stagger(30, { start: 250 })
+        })
+        .add(
+          {
+            targets: '.inform-container .title span',
+            translateX: [40, 0],
+            translateZ: 0,
+            opacity: [0, 1],
+            easing: 'cubicBezier(.475,.425,0,.995)',
+            duration: 800,
+            autoplay: false,
+            delay: _this.$anime.stagger(30, { start: 500 })
+          },
+          '-=600'
+        )
 
-      this.$anime({
-        targets: '.inform-container .title span',
-        translateX: [0, 40],
-        translateZ: 0,
-        opacity: [0, 1],
-        easing: 'cubicBezier(.475,.425,0,.995)',
-        duration: 1000,
-        delay: _this.$anime.stagger(10, { start: 400 })
-      })
+      headerTimeline.pause()
+      this.show = true
+      headerTimeline.play()
     },
 
     watchIntersection() {
@@ -66,7 +76,7 @@ export default {
             if (entry.isIntersecting && !_this.show) {
               _this.show = true
               target.style.setProperty('--bg-width', '100%')
-              _this.animateText()
+              // _this.animateText()
             }
           }
         },

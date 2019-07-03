@@ -54,10 +54,11 @@ export default {
           complete: function() {
             setTimeout(() => {
               if (
-                _this.isExisted(document.querySelector('.tagline')) &&
+                _this.isExisted(document.querySelector('.hero .tagline')) &&
                 _this.isExisted(_this.tagline)
               ) {
-                document.querySelector('.tagline').innerHTML = _this.tagline
+                document.querySelector('.hero .tagline').innerHTML =
+                  _this.tagline
               }
             }, 1000)
           }
@@ -75,10 +76,10 @@ export default {
             complete: function() {
               setTimeout(() => {
                 if (
-                  _this.isExisted(document.querySelector('.title')) &&
+                  _this.isExisted(document.querySelector('.hero .title')) &&
                   _this.isExisted(_this.title)
                 ) {
-                  document.querySelector('.title').innerHTML = _this.title
+                  document.querySelector('.hero .title').innerHTML = _this.title
                 }
               }, 1000)
             }
@@ -87,7 +88,7 @@ export default {
         )
         .add(
           {
-            targets: '.subTitle',
+            targets: '.hero .subTitle',
             translateY: [40, 0],
             translateZ: 0,
             opacity: [0, 1],
@@ -97,10 +98,11 @@ export default {
             complete: function() {
               setTimeout(() => {
                 if (
-                  _this.isExisted(document.querySelector('.subTitle')) &&
+                  _this.isExisted(document.querySelector('.hero .subTitle')) &&
                   _this.isExisted(_this.subTitle)
                 ) {
-                  document.querySelector('.subTitle').innerHTML = _this.subTitle
+                  document.querySelector('.hero .subTitle').innerHTML =
+                    _this.subTitle
                 }
               }, 1000)
             }
@@ -109,7 +111,7 @@ export default {
         )
         .add(
           {
-            targets: '.btn-hero',
+            targets: '.hero .btn-hero',
             translateY: [40, 0],
             translateZ: 0,
             opacity: [0, 1],
