@@ -96,6 +96,11 @@ export default {
           }
         })
       }
+    },
+    optimization: {
+      splitChunks: {
+        name: true
+      }
     }
   },
   render: {
@@ -113,10 +118,6 @@ export default {
     CTF_ABOUT_ID: contentfulConfig.CTF_ABOUT_ID,
     CTF_ABOUT_TYPE_ID: contentfulConfig.CTF_ABOUT_TYPE_ID,
     CTF_PORTFOLIO_TYPE_ID: contentfulConfig.CTF_PORTFOLIO_TYPE_ID
-  },
-  extractCSS: true,
-  splitChunks: {
-    layout: true
   },
   manifest: {
     name: 'Van Nguyen — Product Designer',
