@@ -19,6 +19,21 @@
 }
 
 
+.slide-right {
+  &-enter-active {
+    transition: all 1s var(--primary-ease);
+  }
+  &-leave-active {
+    transition: all 0.6s var(--primary-ease);
+  }
+
+  &-enter,
+  &-leave-to {
+    transform: translateX(-8rem);
+    opacity: 0;
+  }
+}
+
 .slide-up {
   &-enter-active {
     transition: all 1s var(--primary-ease);

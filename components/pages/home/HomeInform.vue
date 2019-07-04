@@ -3,14 +3,16 @@
     class="inform-container section-container d-flex align-items-center section-padding"
   >
     <div class="container">
-      <div class="row no-gutters text-white">
-        <div class="col-12">
-          <p class="tagline mb-5">{{ title }}</p>
+      <transition name="slide-right">
+        <div v-show="show" class="row no-gutters text-white">
+          <div class="col-12">
+            <p class="tagline mb-5">{{ title }}</p>
+          </div>
+          <div class="col-12 col-lg-10 offset-lg-1">
+            <h5 class="title mb-0 font-weight-medium">{{ text }}</h5>
+          </div>
         </div>
-        <div class="col-12 col-lg-10 offset-lg-1">
-          <h5 class="title mb-0 font-weight-medium">{{ text }}</h5>
-        </div>
-      </div>
+      </transition>
     </div>
   </section>
 </template>
@@ -29,44 +31,9 @@ export default {
   },
 
   mounted() {
-    // this.show = true
-    this.charmingText('.inform-container .tagline', '.inform-container .title')
     this.watchIntersection()
   },
   methods: {
-    animateText() {
-      const _this = this
-      const headerTimeline = this.$anime.timeline()
-      headerTimeline
-        .add({
-          targets: '.inform-container .tagline span',
-          translateX: [40, 0],
-          translateZ: 0,
-          opacity: [0, 1],
-          easing: 'cubicBezier(.475,.425,0,.995)',
-          duration: 400,
-          autoplay: false,
-          delay: _this.$anime.stagger(30, { start: 250 })
-        })
-        .add(
-          {
-            targets: '.inform-container .title span',
-            translateX: [40, 0],
-            translateZ: 0,
-            opacity: [0, 1],
-            easing: 'cubicBezier(.475,.425,0,.995)',
-            duration: 800,
-            autoplay: false,
-            delay: _this.$anime.stagger(30, { start: 500 })
-          },
-          '-=600'
-        )
-
-      headerTimeline.pause()
-      this.show = true
-      headerTimeline.play()
-    },
-
     watchIntersection() {
       const target = document.querySelector('.inform-container')
       const _this = this
@@ -74,9 +41,10 @@ export default {
         entries => {
           for (const entry of entries) {
             if (entry.isIntersecting && !_this.show) {
-              _this.show = true
               target.style.setProperty('--bg-width', '100%')
-              // _this.animateText()
+              setTimeout(() => {
+                _this.show = true
+              }, 50)
             }
           }
         },
@@ -113,6 +81,7 @@ export default {
     height: 100%;
     z-index: -1;
     transition: all 0.6s var(--primary-ease);
+    overflow: hidden;
   }
 }
 </style>

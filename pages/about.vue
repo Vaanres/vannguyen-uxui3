@@ -24,7 +24,7 @@
           <section v-if="works.length" class="work-container">
             <transition name="slide-up">
               <div v-if="showExperience">
-                <h1 class="mb-lg-5 pb-lg-5">Experience</h1>
+                <h1 class="mb-5 pb-lg-5">Experience</h1>
                 <div
                   v-for="(item, index) in works"
                   :key="index"
@@ -178,12 +178,11 @@ export default {
               _this.showExperience = true
             }
           },
-          '-=300'
+          '-=600'
         )
 
       headerTimeline.pause()
       this.show = true
-
       headerTimeline.play()
     },
     renderMD(text) {
