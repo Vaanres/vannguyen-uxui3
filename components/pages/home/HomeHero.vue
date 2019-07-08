@@ -51,7 +51,7 @@ export default {
           duration: 400,
           autoplay: false,
           delay: _this.$anime.stagger(30, { start: 250 }),
-          complete: function() {
+          complete() {
             setTimeout(() => {
               if (
                 _this.isExisted(document.querySelector('.hero .tagline')) &&
@@ -73,7 +73,7 @@ export default {
             duration: 800,
             autoplay: false,
             delay: _this.$anime.stagger(30, { start: 500 }),
-            complete: function() {
+            complete() {
               setTimeout(() => {
                 if (
                   _this.isExisted(document.querySelector('.hero .title')) &&
@@ -95,7 +95,7 @@ export default {
             easing: 'cubicBezier(.475,.425,0,.995)',
             duration: 800,
             autoplay: false,
-            complete: function() {
+            complete() {
               setTimeout(() => {
                 if (
                   _this.isExisted(document.querySelector('.hero .subTitle')) &&

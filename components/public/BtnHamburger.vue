@@ -37,7 +37,7 @@ export default {
     }
   },
   watch: {
-    active: function(newValue, oldValue) {
+    active(newValue, oldValue) {
       this.isActive = this.active
     }
   },

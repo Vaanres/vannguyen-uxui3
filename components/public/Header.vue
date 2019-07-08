@@ -50,7 +50,7 @@ export default {
     }
   },
   watch: {
-    getMenuOpenStatus: function(newValue, oldValue) {
+    getMenuOpenStatus(newValue, oldValue) {
       if (this.isMobile()) {
         this.animeLogo(newValue)
       }
@@ -159,7 +159,7 @@ export default {
         easing: 'easeOutExpo',
         duration: 300,
         autoplay: false,
-        delay: function(el, i) {
+        delay(el, i) {
           return 500 + 30 * i
         }
       })
@@ -171,7 +171,7 @@ export default {
         easing: 'easeInExpo',
         duration: 150,
         autoplay: false,
-        delay: function(el, i) {
+        delay(el, i) {
           return 100 + 30 * i
         }
       })

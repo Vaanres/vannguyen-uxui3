@@ -19,7 +19,7 @@ export default {
     }
   },
   watch: {
-    getMenuOpenStatus: function(newValue, oldValue) {}
+    getMenuOpenStatus(newValue, oldValue) {}
   }
 }
 </script>

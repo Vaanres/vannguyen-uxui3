@@ -79,7 +79,7 @@ export default {
       }),
       client.getEntries({
         content_type: process.env.CTF_PORTFOLIO_TYPE_ID,
-        order: '-sys.updatedAt'
+        order: '-fields.order'
       })
     ])
       .then(([about, posts]) => {
@@ -109,7 +109,7 @@ export default {
           duration: 400,
           autoplay: false,
           delay: _this.$anime.stagger(30, { start: 250 }),
-          complete: function() {
+          complete() {
             setTimeout(() => {
               if (
                 _this.isExisted(document.querySelector('.tagline')) &&
@@ -130,7 +130,7 @@ export default {
             duration: 800,
             autoplay: false,
             delay: _this.$anime.stagger(30, { start: 500 }),
-            complete: function() {
+            complete() {
               setTimeout(() => {
                 if (
                   _this.isExisted(document.querySelector('.title')) &&
@@ -152,7 +152,7 @@ export default {
             easing: 'cubicBezier(.475,.425,0,.995)',
             duration: 800,
             autoplay: false,
-            complete: function() {
+            complete() {
               setTimeout(() => {
                 if (
                   _this.isExisted(document.querySelector('.subTitle')) &&
@@ -174,7 +174,7 @@ export default {
             easing: 'cubicBezier(.475,.425,0,.995)',
             duration: 800,
             autoplay: false,
-            complete: function() {
+            complete() {
               _this.showExperience = true
             }
           },

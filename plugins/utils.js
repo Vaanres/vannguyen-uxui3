@@ -37,7 +37,7 @@ Vue.mixin({
         this.trim(taglineSelector, titleSelector)
         charming(document.querySelector(taglineSelector))
         charming(document.querySelector(titleSelector), {
-          split: function(string) {
+          split(string) {
             return string.split(/(\s+)/)
           }
           // setClassName: function(index) {

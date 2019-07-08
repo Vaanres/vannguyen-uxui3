@@ -47,7 +47,7 @@ export default {
     },
     item: {
       type: Object,
-      default: function() {}
+      default() {}
     }
   },
   data() {
