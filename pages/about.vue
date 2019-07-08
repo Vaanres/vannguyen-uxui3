@@ -68,8 +68,8 @@ export default {
   name: 'About',
   data() {
     return {
-      show: false,
-      showExperience: false
+      show: true,
+      showExperience: true
     }
   },
   asyncData({ env }) {
@@ -91,8 +91,8 @@ export default {
       .catch(console.error)
   },
   mounted() {
-    this.charmingText('.about .tagline', '.about .title')
-    this.animateText()
+    // this.charmingText('.about .tagline', '.about .title')
+    // this.animateText()
   },
   methods: {
     animateText() {
