@@ -2425,10 +2425,10 @@ chardet@^0.7.0:
   resolved "https://registry.yarnpkg.com/chardet/-/chardet-0.7.0.tgz#90094849f0937f2eedc2425d0d28a9e5f0cbad9e"
   integrity sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==
 
-charming@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/charming/-/charming-3.0.0.tgz#b262855260592c56c301d2b810519fbe9ea38428"
-  integrity sha512-EygZHs+PThA7C0r6eSghngz2gvL6e6C034mD8j/nvaGEswcpjY157ZK6m34PkrG8u9X4s20REHFZpEWUhubtXA==
+charming@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/charming/-/charming-3.0.1.tgz#19298a9184bc0be3d33968bc7ad047700ef874fb"
+  integrity sha512-5HNYG6p6MHG66qa3Lu6i0NfHBMPu5QyM7NJRHmZUJ4w/qZmkaFnXKH8A0/KNfN7kd0VQSbAS7JiIlem7qq2Urw==
 
 check-types@^7.3.0:
   version "7.4.0"
@@ -2780,10 +2780,10 @@ contentful-sdk-core@^6.3.6:
     lodash "^4.17.10"
     qs "^6.5.2"
 
-contentful@^7.8.1:
-  version "7.8.1"
-  resolved "https://registry.yarnpkg.com/contentful/-/contentful-7.8.1.tgz#879881ccc3c1fb3ecd886c121e1c6297ef884643"
-  integrity sha512-HHQ8kxcJ4YITiBUTChY/bxAZVxSGf9wv4aBg9XmlFmebbKijF1hAY5h4vlcE0EgrxG8nHnSOK1RlsUjaDym39w==
+contentful@^7.8.2:
+  version "7.8.2"
+  resolved "https://registry.yarnpkg.com/contentful/-/contentful-7.8.2.tgz#70ecedff129a1a4c81e4b01e616b08b789a16da8"
+  integrity sha512-8aaCOxk2FJv5mDZlPh9s6BKj6rkjqGghtVuKXwx/sEYRQZVBsvvQgq+pMnN5XvTE2EHPEfu6C9d5J5cvbWlOjg==
   dependencies:
     axios "^0.19.0"
     contentful-resolve-response "^1.1.4"
@@ -3591,7 +3591,12 @@ eslint-config-prettier@^6.0.0:
   dependencies:
     get-stdin "^6.0.0"
 
-eslint-config-standard@>=12.0.0, eslint-config-standard@^12.0.0:
+eslint-config-standard@>=13.0.1:
+  version "13.0.1"
+  resolved "https://registry.yarnpkg.com/eslint-config-standard/-/eslint-config-standard-13.0.1.tgz#c9c6ffe0cfb8a51535bc5c7ec9f70eafb8c6b2c0"
+  integrity sha512-zLKp4QOgq6JFgRm1dDCVv1Iu0P5uZ4v5Wa4DTOkg2RFMxdCX/9Qf7lz9ezRj2dBRa955cWQF/O/LWEiYWAHbTw==
+
+eslint-config-standard@^12.0.0:
   version "12.0.0"
   resolved "https://registry.yarnpkg.com/eslint-config-standard/-/eslint-config-standard-12.0.0.tgz#638b4c65db0bd5a41319f96bba1f15ddad2107d9"
   integrity sha512-COUz8FnXhqFitYj4DTqHzidjIL/t4mumGZto5c7DrBpvWoie+Sn3P4sLEzUGeYhRElWuFEf8K1S1EfvD1vixCQ==
@@ -3648,7 +3653,12 @@ eslint-plugin-import@>=2.18.0, eslint-plugin-import@^2.18.0:
     read-pkg-up "^2.0.0"
     resolve "^1.11.0"
 
-eslint-plugin-jest@>=22.7.2, eslint-plugin-jest@^22.7.2:
+eslint-plugin-jest@>=22.11.1:
+  version "22.11.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-22.11.1.tgz#04b586e2fddd07e55900a381255d6b3d9242ae87"
+  integrity sha512-kPF1Nmr5xMLz6DT7qEttz0TTeyx1x6SozIkNO9y4F2yxuWjHMp/e70fo742pR3y0MewgXQQMIIXeSKLB66iO7Q==
+
+eslint-plugin-jest@^22.7.2:
   version "22.7.2"
   resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-22.7.2.tgz#7ab118a66a34e46ae5e16a128b5d24fd28b43dca"
   integrity sha512-Aecqe3ulBVI7amgOycVI8ZPL8o0SnGHOf3zn2/Ciu8TXyXDHcjtwD3hOs3ss/Qh/VAwlW/DMcuiXg5btgF+XMA==
@@ -5678,6 +5688,11 @@ lodash@^4.0.0, lodash@^4.15.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.3,
   version "4.17.11"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
   integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
+
+lodash@^4.17.15:
+  version "4.17.15"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
+  integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
 
 loose-envify@^1.0.0:
   version "1.4.0"
