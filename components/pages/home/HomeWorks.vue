@@ -58,7 +58,7 @@ export default {
   props: {
     itemQuantity: {
       type: Number,
-      default: 6
+      default: 8
     }
   },
   data() {
