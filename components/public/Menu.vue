@@ -10,9 +10,7 @@
                 :key="index"
                 class="nav-item d-flex align-items-center p-0"
               >
-                <div class="nav-number">
-                  {{ index + 1 }}
-                </div>
+                <div class="nav-number">{{ index + 1 }}</div>
                 <h1 class="mb-0" @click="menuItemClicked()">
                   <nuxt-link
                     class="nav-link"
@@ -20,17 +18,14 @@
                     active-class="active"
                     exact
                     :data-hover="linkItem.name"
-                    >{{ linkItem.name }}</nuxt-link
-                  >
+                  >{{ linkItem.name }}</nuxt-link>
                 </h1>
               </li>
             </ul>
           </div>
         </div>
         <div class="col-12 col-md-6">
-          <div
-            class="d-flex flex-column flex-end justify-content-lg-end align-items-lg-end h-100"
-          >
+          <div class="d-flex flex-column flex-end justify-content-lg-end align-items-lg-end h-100">
             <contact-info theme="dark" />
           </div>
         </div>
@@ -48,9 +43,9 @@ export default {
   data() {
     return {
       contactInfo: {
-        email: 'hr-department@vietlinkads.com',
-        phone: '+84 28 3910 7431',
-        address: '67 Le Loi, Ben Nghe Ward, District 1, Ho Chi Minh city'
+        email: 'vaanres@gmail.com',
+        phone: '+84866485046',
+        address: ''
       },
       links: [
         {

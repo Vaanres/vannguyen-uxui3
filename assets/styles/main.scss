@@ -46,6 +46,7 @@ html {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: black;
 }
 
 h6 {
@@ -57,8 +58,6 @@ h6 {
     font-weight: $font-weight-medium;
   }
 }
-
-
 
 .sub-title {
   font-size: 1.3rem;
@@ -92,12 +91,12 @@ button {
 }
 
 //AnimeJS
-[class*='moving-letters'], [class*='char'] {
+[class*='moving-letters'],
+[class*='char'] {
   display: inline-block;
   white-space: pre;
 }
 
-
-// Animate 
+// Animate
 
 //Scrolbar
